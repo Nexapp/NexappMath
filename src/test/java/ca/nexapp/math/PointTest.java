@@ -100,7 +100,7 @@ public class PointTest {
     }
 
     @Test
-    public void givenOriginAndPointAt1_1ThenTheDistanceShouldBe1_4142() {
+    public void canFindTheDistanceBetweenTwoPoints() {
         double actualDistance = Point.ORIGIN.getDistanceTo(Point.fromCartesian(1, 1));
 
         assertThat(actualDistance).isWithin(TOLERANCE).of(1.4142);
@@ -183,7 +183,7 @@ public class PointTest {
     }
 
     @Test
-    public void givenAPivotAtX1Y2AndPointAtX2Y4_WhenRotatingClockwiseWith90Degrees_ShouldReturnX3Y1() {
+    public void canPerformAClockwiseRotation() {
         Point point = Point.fromCartesian(2, 4);
         Point pivot = Point.fromCartesian(1, 2);
 
@@ -193,7 +193,7 @@ public class PointTest {
     }
 
     @Test
-    public void givenAPivotAtX2YMinus2AndAPointAtX2Y0_WhenRotatingCounterClockwiseWith90Degrees_ShouldReturnX0YMinus2() {
+    public void canPerformACounterClockwiseRotation() {
         Point point = Point.fromCartesian(2, 0);
         Point pivot = Point.fromCartesian(2, -2);
 
