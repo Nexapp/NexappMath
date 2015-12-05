@@ -10,17 +10,21 @@ import org.mockito.runners.MockitoJUnitRunner;
 public class DurationTest {
 
     @Test
-    public void addingTwoSecondsToZero_ShouldReturnTwoSeconds() {
+    public void addingTwoDurations_ShouldIncreaseIt() {
         Duration twoSeconds = Duration.seconds(2);
 
-        assertThat(Duration.seconds(0).add(twoSeconds)).isEqualTo(twoSeconds);
+        Duration sum = Duration.seconds(0).add(twoSeconds);
+
+        assertThat(sum).isEqualTo(twoSeconds);
     }
 
     @Test
-    public void substractingTwoSecondsToTwoSeconds_ShouldReturnZeroSeconds() {
+    public void substractingTwoDurations_ShouldDecreaseIt() {
         Duration twoSeconds = Duration.seconds(2);
 
-        assertThat(twoSeconds.substract(twoSeconds)).isEqualTo(Duration.seconds(0));
+        Duration minuend = twoSeconds.substract(twoSeconds);
+
+        assertThat(minuend).isEqualTo(Duration.seconds(0));
     }
 
     @Test

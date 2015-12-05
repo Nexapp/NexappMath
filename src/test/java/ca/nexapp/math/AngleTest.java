@@ -21,7 +21,7 @@ public class AngleTest {
     }
 
     @Test
-    public void convertingAnAngleToDegreesToDegrees_ShouldReturnTheSameAngle() {
+    public void convertingAnAngleInDegreesToDegrees_ShouldReturnTheSameAngle() {
         Angle angle = Angle.fromDegrees(AN_ANGLE_IN_DEGREES);
 
         assertThat(angle.toDegrees()).isWithin(DELTA).of(AN_ANGLE_IN_DEGREES);
@@ -35,7 +35,7 @@ public class AngleTest {
     }
 
     @Test
-    public void convertingAnAngleInRadiansToRadiansShouldReturnTheSameAngle() {
+    public void convertingAnAngleInRadiansToRadians_ShouldReturnTheSameAngle() {
         Angle angle = Angle.fromRadians(THE_ANGLE_IN_RADIANS);
 
         assertThat(angle.toRadians()).isWithin(DELTA).of(THE_ANGLE_IN_RADIANS);
@@ -45,9 +45,10 @@ public class AngleTest {
     public void whenInverting_ShouldReturnTheOpposite() {
         Angle angle = Angle.fromRadians(THE_ANGLE_IN_RADIANS);
 
-        Angle opposite = Angle.fromRadians(-THE_ANGLE_IN_RADIANS);
+        Angle opposite = angle.invert();
 
-        assertThat(angle.invert()).isEqualTo(opposite);
+        Angle expectedOpposite = Angle.fromRadians(-THE_ANGLE_IN_RADIANS);
+        assertThat(opposite).isEqualTo(expectedOpposite);
     }
 
     @Test
@@ -61,9 +62,10 @@ public class AngleTest {
     public void givenANegativeAngleInDegrees_WhenNormalizing_ShouldReturnTheAdditionOf360WithThatAngle() {
         Angle angle = Angle.fromDegrees(A_NEGATIVE_ANGLE_IN_DEGREES);
 
-        Angle expectedAngle = Angle.fromDegrees(360 + A_NEGATIVE_ANGLE_IN_DEGREES);
+        Angle normalizedAngle = angle.normalize();
 
-        assertThat(angle.normalize()).isEqualTo(expectedAngle);
+        Angle expectedAngle = Angle.fromDegrees(360 + A_NEGATIVE_ANGLE_IN_DEGREES);
+        assertThat(normalizedAngle).isEqualTo(expectedAngle);
     }
 
     @Test
