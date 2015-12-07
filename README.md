@@ -1,7 +1,7 @@
 # Nexapp Math
 Nexapp's math library.
 
-## What does it include?
+## Provided by the library
 ### Value Objects
 **Angle**: degrees or radians, plus some useful methods <br />
 **Duration**: from nanoseconds to centuries, allows conversion <br />
