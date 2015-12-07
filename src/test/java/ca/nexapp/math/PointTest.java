@@ -28,13 +28,13 @@ public class PointTest {
     }
 
     @Test
-    public void givenADistance_ShouldRetrieveTheSameDistance() {
-        assertThat(Point.fromPolar(ANGLE, DISTANCE).getDistance()).isWithin(TOLERANCE).of(DISTANCE);
+    public void givenAPolarDistance_ShouldRetrieveTheSamePolarDistance() {
+        assertThat(Point.fromPolar(ANGLE, DISTANCE).getPolarDistance()).isWithin(TOLERANCE).of(DISTANCE);
     }
 
     @Test
-    public void givenAnAngle_ShouldRetrieveTheSameAngle() {
-        assertThat(Point.fromPolar(ANGLE, DISTANCE).getAngle()).isEqualTo(ANGLE);
+    public void givenAPolarAngle_ShouldRetrieveTheSamePolarAngle() {
+        assertThat(Point.fromPolar(ANGLE, DISTANCE).getPolarAngle()).isEqualTo(ANGLE);
     }
 
     @Test
@@ -70,33 +70,33 @@ public class PointTest {
     }
 
     @Test
-    public void givenOrigin_ShouldReturnAnAngleOfZero() {
-        assertThat(Point.ORIGIN.getAngle()).isEqualTo(Angle.ZERO_DEGREES);
+    public void givenOrigin_ShouldReturnAPolarAngleOfZero() {
+        assertThat(Point.ORIGIN.getPolarAngle()).isEqualTo(Angle.ZERO_DEGREES);
     }
 
     @Test
-    public void givenCartesianPointAt1_1_ShouldReturnAnAngleOf45Degrees() {
-        assertThat(Point.fromCartesian(1.0, 1.0).getAngle()).isEqualTo(Angle.fromDegrees(45.00));
+    public void givenCartesianPointAt1_1_ShouldReturnAPolarAngleOf45Degrees() {
+        assertThat(Point.fromCartesian(1.0, 1.0).getPolarAngle()).isEqualTo(Angle.fromDegrees(45.00));
     }
 
     @Test
-    public void givenCartesianPointAt1_Minus1_ShouldReturnAnAngleOf315Degrees() {
-        assertThat(Point.fromCartesian(1.0, -1.0).getAngle()).isEqualTo(Angle.fromDegrees(315.00));
+    public void givenCartesianPointAt1_Minus1_ShouldReturnAPolarAngleOf315Degrees() {
+        assertThat(Point.fromCartesian(1.0, -1.0).getPolarAngle()).isEqualTo(Angle.fromDegrees(315.00));
     }
 
     @Test
-    public void givenCartesianPointAtMinus5_0_ShouldReturnAnAngleOf180Degrees() {
-        assertThat(Point.fromCartesian(-5.0, 0).getAngle()).isEqualTo(Angle.DEGREES_180);
+    public void givenCartesianPointAtMinus5_0_ShouldReturnAPolarAngleOf180Degrees() {
+        assertThat(Point.fromCartesian(-5.0, 0).getPolarAngle()).isEqualTo(Angle.DEGREES_180);
     }
 
     @Test
-    public void givenCartesianPointAt0_6_ShouldReturnAnAngleOf90Degrees() {
-        assertThat(Point.fromCartesian(0, 6.0).getAngle()).isEqualTo(Angle.DEGREES_90);
+    public void givenCartesianPointAt0_6_ShouldReturnAPolarAngleOf90Degrees() {
+        assertThat(Point.fromCartesian(0, 6.0).getPolarAngle()).isEqualTo(Angle.DEGREES_90);
     }
 
     @Test
-    public void givenCartesianPointAt0_Minus7_ShouldReturnAnAngleOf270Degrees() {
-        assertThat(Point.fromCartesian(0, -7.0).getAngle()).isEqualTo(Angle.DEGREES_270);
+    public void givenCartesianPointAt0_Minus7_ShouldReturnAPolarAngleOf270Degrees() {
+        assertThat(Point.fromCartesian(0, -7.0).getPolarAngle()).isEqualTo(Angle.DEGREES_270);
     }
 
     @Test

@@ -24,11 +24,11 @@ public class Point {
         return y;
     }
 
-    public double getDistance() {
+    public double getPolarDistance() {
         return Math.hypot(x, y);
     }
 
-    public Angle getAngle() {
+    public Angle getPolarAngle() {
         if (x == 0 && y == 0) {
             return Angle.ZERO_DEGREES;
         } else if (x > 0 && y >= 0) {
@@ -103,7 +103,7 @@ public class Point {
 
     @Override
     public String toString() {
-        return "(" + getX() + ", " + getY() + ")(" + getDistance() + ", " + getAngle().toDegrees() + ")";
+        return "(" + getX() + ", " + getY() + ")(" + getPolarDistance() + ", " + getPolarAngle().toDegrees() + ")";
     }
 
     public static Point fromCartesian(double x, double y) {
