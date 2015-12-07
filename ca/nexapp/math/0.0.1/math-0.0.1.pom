@@ -40,16 +40,16 @@
 				<artifactId>site-maven-plugin</artifactId>
 				<version>0.12</version>
 				<configuration>
-					<message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
-					<noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
-					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
-					<branch>refs/heads/mvn-repo</branch>                       <!-- remote branch name -->
+					<message>Maven artifacts for ${project.version}</message> 
+					<noJekyll>true</noJekyll>
+					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> 
+					<branch>refs/heads/mvn-repo</branch>
 					<includes>
 						<include>**/*</include>
 					</includes>
-					<merge>true</merge>                                        <!-- don't delete old artifacts -->
-					<repositoryName>NexappMath</repositoryName>                <!-- github repo name -->
-					<repositoryOwner>Nexapp</repositoryOwner>                  <!-- github username -->
+					<merge>true</merge>
+					<repositoryName>NexappMath</repositoryName>
+					<repositoryOwner>Nexapp</repositoryOwner>
 				</configuration>
 				<executions>
 					<!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
