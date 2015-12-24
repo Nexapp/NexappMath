@@ -161,28 +161,21 @@ public class Line {
     }
 
     public Point findOffsettedPointUpward(double offsetFromPoint, Point point) {
-        if (hasANegativeSlope()) {
-            offsetFromPoint = -offsetFromPoint;
-        }
-        return findPointFromOffsettedPoint(offsetFromPoint, point);
+        double actualOffset = hasANegativeSlope() ? -offsetFromPoint : offsetFromPoint;
+        return findOffsettedPointRightward(actualOffset, point);
     }
 
     public Point findOffsettedPointDownward(double offsetFromPoint, Point point) {
-        if (hasAPositiveSlope()) {
-            offsetFromPoint = -offsetFromPoint;
-        }
-        return findPointFromOffsettedPoint(offsetFromPoint, point);
-    }
-
-    public Point findOffsettedPointRightward(double offsetFromPoint, Point point) {
-        return findPointFromOffsettedPoint(offsetFromPoint, point);
+        double actualOffset = hasAPositiveSlope() ? -offsetFromPoint : offsetFromPoint;
+        return findOffsettedPointRightward(actualOffset, point);
     }
 
     public Point findOffsettedPointLeftward(double offsetFromPoint, Point point) {
-        return findPointFromOffsettedPoint(-offsetFromPoint, point);
+        double actualOffset = -offsetFromPoint;
+        return findOffsettedPointRightward(actualOffset, point);
     }
 
-    private Point findPointFromOffsettedPoint(double offsetFromPoint, Point point) {
+    public Point findOffsettedPointRightward(double offsetFromPoint, Point point) {
         double x2 = point.getX();
         double y2 = point.getY();
 
@@ -213,15 +206,12 @@ public class Line {
     }
 
     public Line findTheBelowParallelLineOf(double offset) {
-        Point aPoint = findPointGivenX(0);
-        Line perpendicularLine = findPerpendicularLinePassingThrough(aPoint);
-        Point offsettedPoint = perpendicularLine.findOffsettedPointDownward(offset, aPoint);
-        return findParallelLinePassingThrough(offsettedPoint);
+        return findTheAboveParallelLineOf(-offset);
     }
 
     private boolean hasSameSlope(Line other) {
-        double diff = Math.abs(slope - other.slope);
-        return Double.isInfinite(diff) || diff < PRECISION;
+        double slopeDiff = Math.abs(slope - other.slope);
+        return Double.isInfinite(slopeDiff) || slopeDiff < PRECISION;
     }
 
     @Override
