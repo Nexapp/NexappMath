@@ -6,10 +6,10 @@ Nexapp's math library.
 **Angle**: degrees or radians, plus some useful methods <br />
 **Duration**: from nanoseconds to centuries, allows conversion <br />
 **Percentage**: handle percentage from its two forms: 83% (ratio) or 0.65 (fraction) <br />
-**Point**: cartesian or polar, plus some useful methods <br />
+**Point**: cartesian or polar, plus some useful methods
 
-### Equations
-**Line**:  line in 2D plane (mx + b), with many useful methods <br />
+### Functions
+**Line**:  in a 2D plane (mx + b), with many useful methods
 
 ## Roadmap
 ### Shapes
@@ -18,7 +18,7 @@ Triangle <br />
 Circle <br />
 Ellipse
 
-### Equations
+### Functions
 Segment <br />
 Quadratic function (2nd degree) <br />
 Cubic function (3rd degree) <br />
@@ -31,7 +31,7 @@ Spline
 
 ### Intersections
 Between shapes <br />
-Between equations
+Between functions
 
 ## How to use it
 At the moment, this project is hosted on GitHub and not on Maven Central.

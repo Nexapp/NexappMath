@@ -1,4 +1,4 @@
-package ca.nexapp.math.equations;
+package ca.nexapp.math.functions;
 
 import java.util.Objects;
 

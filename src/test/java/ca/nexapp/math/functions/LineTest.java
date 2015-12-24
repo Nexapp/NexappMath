@@ -1,4 +1,4 @@
-package ca.nexapp.math.equations;
+package ca.nexapp.math.functions;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import ca.nexapp.math.Angle;
 import ca.nexapp.math.Point;
+import ca.nexapp.math.functions.Line;
 
 public class LineTest {
 
