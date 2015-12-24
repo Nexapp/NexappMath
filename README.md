@@ -11,9 +11,16 @@ Nexapp's math library.
 ### Functions
 **Line**:  in a 2D plane (mx + b), with many useful methods
 
-## Roadmap
 ### Shapes
-Rectangle <br />
+**Rectangle**: easy instantiation. Manages: corners, center point, dimensions and rectangle intersections.
+
+## Roadmap
+###Value Objects
+Volume (litres, millilitres, pint, gallons, tablespoon, teaspoon, etc.) <br />
+Unit of length (km, meters, miles, etc.) <br />
+Mass (grams, kg, pounds, ounces, tonnes, etc.)
+
+### Shapes
 Triangle <br />
 Circle <br />
 Ellipse
