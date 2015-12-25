@@ -2,7 +2,7 @@ package ca.nexapp.math;
 
 import java.util.Objects;
 
-public class Duration {
+public class Duration implements Comparable<Duration> {
 
     private static final double WEEKS_IN_A_MONTH = 4.34812;
 
@@ -129,6 +129,11 @@ public class Duration {
 
     public static Duration centuries(long numberOfCenturies) {
         return new Duration(numberOfCenturies * NANOS_IN_A_CENTURY);
+    }
+
+    @Override
+    public int compareTo(Duration other) {
+        return Double.compare(nanoseconds, other.nanoseconds);
     }
 
     @Override

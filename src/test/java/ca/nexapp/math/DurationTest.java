@@ -252,4 +252,27 @@ public class DurationTest {
         assertThat(Duration.decades(9).toCenturies()).isEqualTo(0);
     }
 
+    @Test
+    public void aShortTime_ShouldBeLesserThanALongTime() {
+        Duration shortTime = Duration.minutes(5);
+        Duration longTime = Duration.minutes(24);
+
+        assertThat(shortTime).isLessThan(longTime);
+    }
+
+    @Test
+    public void theSameTime_ShouldBeEquivalentComparatively() {
+        Duration time = Duration.minutes(6);
+
+        assertThat(time).isEquivalentAccordingToCompareTo(time);
+    }
+
+    @Test
+    public void aLongTime_ShouldBeGreaterThanAShortTime() {
+        Duration shortTime = Duration.minutes(5);
+        Duration longTime = Duration.minutes(24);
+
+        assertThat(longTime).isGreaterThan(shortTime);
+    }
+
 }
