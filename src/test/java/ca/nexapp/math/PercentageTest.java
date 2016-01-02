@@ -13,25 +13,33 @@ public class PercentageTest {
 
     @Test
     public void givenZeroPercentFromRatio_ShouldReturnZeroPercent() {
-        Percentage zeroPercent = Percentage.fromRatio(0.0);
+	Percentage zeroPercent = Percentage.fromRatio(0.0);
 
-        assertThat(zeroPercent).isEqualTo(Percentage.ZERO_PERCENT);
+	assertThat(zeroPercent).isEqualTo(Percentage.ZERO_PERCENT);
     }
 
     @Test
     public void givenOneHundredPercentFromFraction_ShouldReturnOneHundredPercent() {
-        Percentage oneHundredPercentage = Percentage.fromFraction(1.0);
+	Percentage oneHundredPercentage = Percentage.fromFraction(1.0);
 
-        assertThat(oneHundredPercentage).isEqualTo(Percentage.ONE_HUNDRED_PERCENT);
+	assertThat(oneHundredPercentage).isEqualTo(Percentage.ONE_HUNDRED_PERCENT);
     }
 
     @Test
     public void givenOneHundredPercent_ShouldReturnOneAsFraction() {
-        assertThat(Percentage.ONE_HUNDRED_PERCENT.toFraction()).isWithin(TOLERANCE).of(1.0);
+	assertThat(Percentage.ONE_HUNDRED_PERCENT.toFraction()).isWithin(TOLERANCE).of(1.0);
     }
 
     @Test
     public void givenOneHundredPercent_ShouldReturnOneHundredAsRatio() {
-        assertThat(Percentage.ONE_HUNDRED_PERCENT.toRatio()).isWithin(TOLERANCE).of(100.0);
+	assertThat(Percentage.ONE_HUNDRED_PERCENT.toRatio()).isWithin(TOLERANCE).of(100.0);
+    }
+
+    @Test
+    public void canCreateAPercentageWithANumeratorAndADenominator() {
+	Percentage percentage = Percentage.fromFraction(10, 40);
+
+	Percentage expected = Percentage.fromRatio(25);
+	assertThat(percentage).isEqualTo(expected);
     }
 }
