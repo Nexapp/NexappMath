@@ -42,4 +42,26 @@ public class PercentageTest {
 	Percentage expected = Percentage.fromRatio(25);
 	assertThat(percentage).isEqualTo(expected);
     }
+
+    @Test
+    public void canCalculateTheAverageBetweenTwoValues() {
+	Percentage average = Percentage.ZERO_PERCENT.average(Percentage.ONE_HUNDRED_PERCENT);
+
+	Percentage expected = Percentage.fromRatio(50);
+	assertThat(average).isEqualTo(expected);
+    }
+
+    @Test
+    public void canCalculateTheAverageBetweenMultipleValues() {
+	Percentage value1 = Percentage.fromRatio(60);
+	Percentage value2 = Percentage.fromRatio(75);
+	Percentage value3 = Percentage.fromRatio(75);
+	Percentage value4 = Percentage.fromRatio(90);
+	Percentage value5 = Percentage.fromRatio(75);
+
+	Percentage average = value1.average(value2, value3, value4, value5);
+
+	Percentage expected = Percentage.fromRatio(75);
+	assertThat(average).isEqualTo(expected);
+    }
 }

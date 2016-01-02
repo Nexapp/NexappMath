@@ -1,5 +1,6 @@
 package ca.nexapp.math;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Percentage {
@@ -22,6 +23,13 @@ public class Percentage {
 
     public double toFraction() {
 	return percentageAsFraction;
+    }
+
+    public Percentage average(Percentage... percentages) {
+	double sum = Arrays.stream(percentages).mapToDouble(Percentage::toRatio).sum();
+	double sumPlusSelf = sum + toRatio();
+	double actualCount = percentages.length + 1;
+	return fromFraction(sumPlusSelf, ONE_HUNDRED * actualCount);
     }
 
     public static Percentage fromRatio(double ratio) {
