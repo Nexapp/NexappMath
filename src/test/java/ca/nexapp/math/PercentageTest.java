@@ -64,4 +64,26 @@ public class PercentageTest {
 	Percentage expected = Percentage.fromRatio(75);
 	assertThat(average).isEqualTo(expected);
     }
+
+    @Test
+    public void givenALowerPercentage_CanCalculateTheDifferenceWithIt() {
+	Percentage lowPercentage = Percentage.fromRatio(10);
+	Percentage highPercentage = Percentage.fromRatio(85);
+
+	Percentage difference = lowPercentage.difference(highPercentage);
+
+	Percentage expected = Percentage.fromRatio(85 - 10);
+	assertThat(difference).isEqualTo(expected);
+    }
+
+    @Test
+    public void givenAHighPercentage_CanCalculateTheDifferenceWithIt() {
+	Percentage lowPercentage = Percentage.fromRatio(5);
+	Percentage highPercentage = Percentage.fromRatio(60);
+
+	Percentage difference = highPercentage.difference(lowPercentage);
+
+	Percentage expected = Percentage.fromRatio(60 - 5);
+	assertThat(difference).isEqualTo(expected);
+    }
 }

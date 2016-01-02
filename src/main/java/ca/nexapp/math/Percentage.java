@@ -32,6 +32,11 @@ public class Percentage {
 	return fromFraction(sumPlusSelf, ONE_HUNDRED * actualCount);
     }
 
+    public Percentage difference(Percentage other) {
+	double difference = Math.abs(toRatio() - other.toRatio());
+	return fromRatio(difference);
+    }
+
     public static Percentage fromRatio(double ratio) {
 	return new Percentage(ratio / ONE_HUNDRED);
     }
