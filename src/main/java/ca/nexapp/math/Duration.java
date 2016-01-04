@@ -1,5 +1,6 @@
 package ca.nexapp.math;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Duration implements Comparable<Duration> {
@@ -24,130 +25,137 @@ public class Duration implements Comparable<Duration> {
     private final double nanoseconds;
 
     private Duration(double nanoseconds) {
-        this.nanoseconds = nanoseconds;
+	this.nanoseconds = nanoseconds;
     }
 
     public Duration add(Duration augend) {
-        return new Duration(nanoseconds + augend.nanoseconds);
+	return new Duration(nanoseconds + augend.nanoseconds);
     }
 
     public Duration substract(Duration subtrahend) {
-        return new Duration(nanoseconds - subtrahend.nanoseconds);
+	return new Duration(nanoseconds - subtrahend.nanoseconds);
+    }
+
+    public Duration average(Duration... durations) {
+	double sum = Arrays.stream(durations).mapToLong(Duration::toNanoseconds).sum();
+	double sumPlusSelf = sum + toNanoseconds();
+	double actualCount = durations.length + 1;
+	return new Duration(sumPlusSelf / actualCount);
     }
 
     public long toNanoseconds() {
-        return (long) nanoseconds;
+	return (long) nanoseconds;
     }
 
     public long toMicroseconds() {
-        return (long) (nanoseconds / NANOS_IN_A_MICROSECOND);
+	return (long) (nanoseconds / NANOS_IN_A_MICROSECOND);
     }
 
     public long toMilliseconds() {
-        return (long) (nanoseconds / NANOS_IN_A_MILLISECOND);
+	return (long) (nanoseconds / NANOS_IN_A_MILLISECOND);
     }
 
     public long toSeconds() {
-        return (long) (nanoseconds / NANOS_IN_A_SECOND);
+	return (long) (nanoseconds / NANOS_IN_A_SECOND);
     }
 
     public long toMinutes() {
-        return (long) (nanoseconds / NANOS_IN_A_MINUTE);
+	return (long) (nanoseconds / NANOS_IN_A_MINUTE);
     }
 
     public long toHours() {
-        return (long) (nanoseconds / NANOS_IN_AN_HOUR);
+	return (long) (nanoseconds / NANOS_IN_AN_HOUR);
     }
 
     public long toDays() {
-        return (long) (nanoseconds / NANOS_IN_A_DAY);
+	return (long) (nanoseconds / NANOS_IN_A_DAY);
     }
 
     public long toWeeks() {
-        return (long) (nanoseconds / NANOS_IN_A_WEEK);
+	return (long) (nanoseconds / NANOS_IN_A_WEEK);
     }
 
     public long toMonths() {
-        return (long) (nanoseconds / NANOS_IN_A_MONTH);
+	return (long) (nanoseconds / NANOS_IN_A_MONTH);
     }
 
     public long toYears() {
-        return (long) (nanoseconds / NANOS_IN_A_YEAR);
+	return (long) (nanoseconds / NANOS_IN_A_YEAR);
     }
 
     public long toDecades() {
-        return (long) (nanoseconds / NANOS_IN_A_DECADE);
+	return (long) (nanoseconds / NANOS_IN_A_DECADE);
     }
 
     public long toCenturies() {
-        return (long) (nanoseconds / NANOS_IN_A_CENTURY);
+	return (long) (nanoseconds / NANOS_IN_A_CENTURY);
     }
 
     public static Duration nanoseconds(long numberOfNanoseconds) {
-        return new Duration(numberOfNanoseconds);
+	return new Duration(numberOfNanoseconds);
     }
 
     public static Duration microseconds(long numberOfMicroseconds) {
-        return new Duration(numberOfMicroseconds * NANOS_IN_A_MICROSECOND);
+	return new Duration(numberOfMicroseconds * NANOS_IN_A_MICROSECOND);
     }
 
     public static Duration milliseconds(long numberOfMilliseconds) {
-        return new Duration(numberOfMilliseconds * NANOS_IN_A_MILLISECOND);
+	return new Duration(numberOfMilliseconds * NANOS_IN_A_MILLISECOND);
     }
 
     public static Duration seconds(long numberOfSeconds) {
-        return new Duration(numberOfSeconds * NANOS_IN_A_SECOND);
+	return new Duration(numberOfSeconds * NANOS_IN_A_SECOND);
     }
 
     public static Duration minutes(long numberOfMinutes) {
-        return new Duration(numberOfMinutes * NANOS_IN_A_MINUTE);
+	return new Duration(numberOfMinutes * NANOS_IN_A_MINUTE);
     }
 
     public static Duration hours(long numberOfHours) {
-        return new Duration(numberOfHours * NANOS_IN_AN_HOUR);
+	return new Duration(numberOfHours * NANOS_IN_AN_HOUR);
     }
 
     public static Duration days(long numberOfDays) {
-        return new Duration(numberOfDays * NANOS_IN_A_DAY);
+	return new Duration(numberOfDays * NANOS_IN_A_DAY);
     }
 
     public static Duration weeks(long numberOfWeeks) {
-        return new Duration(numberOfWeeks * NANOS_IN_A_WEEK);
+	return new Duration(numberOfWeeks * NANOS_IN_A_WEEK);
     }
 
     public static Duration months(long numberOfMonths) {
-        return new Duration(numberOfMonths * NANOS_IN_A_MONTH);
+	return new Duration(numberOfMonths * NANOS_IN_A_MONTH);
     }
 
     public static Duration years(long numberOfYears) {
-        return new Duration(numberOfYears * NANOS_IN_A_YEAR);
+	return new Duration(numberOfYears * NANOS_IN_A_YEAR);
     }
 
     public static Duration decades(long numberOfDecades) {
-        return new Duration(numberOfDecades * NANOS_IN_A_DECADE);
+	return new Duration(numberOfDecades * NANOS_IN_A_DECADE);
     }
 
     public static Duration centuries(long numberOfCenturies) {
-        return new Duration(numberOfCenturies * NANOS_IN_A_CENTURY);
+	return new Duration(numberOfCenturies * NANOS_IN_A_CENTURY);
     }
 
     @Override
     public int compareTo(Duration other) {
-        return Double.compare(nanoseconds, other.nanoseconds);
+	return Double.compare(nanoseconds, other.nanoseconds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nanoseconds);
+	return Objects.hash(nanoseconds);
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof Duration)) {
-            return false;
-        }
+	if (!(obj instanceof Duration)) {
+	    return false;
+	}
 
-        Duration other = (Duration) obj;
-        return Objects.equals(nanoseconds, other.nanoseconds);
+	Duration other = (Duration) obj;
+	return Objects.equals(nanoseconds, other.nanoseconds);
     }
 }
