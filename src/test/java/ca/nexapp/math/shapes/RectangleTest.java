@@ -4,7 +4,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import org.junit.Test;
 
-import ca.nexapp.math.Point;
+import ca.nexapp.math.units.Point;
 
 public class RectangleTest {
 

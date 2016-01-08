@@ -1,4 +1,4 @@
-package ca.nexapp.math;
+package ca.nexapp.math.units;
 
 import java.util.Arrays;
 import java.util.Objects;

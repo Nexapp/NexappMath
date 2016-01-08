@@ -1,6 +1,6 @@
 package ca.nexapp.math.shapes;
 
-import ca.nexapp.math.Point;
+import ca.nexapp.math.units.Point;
 
 public class Rectangle {
 

@@ -4,9 +4,9 @@ import static com.google.common.truth.Truth.assertThat;
 
 import org.junit.Test;
 
-import ca.nexapp.math.Angle;
-import ca.nexapp.math.Point;
 import ca.nexapp.math.functions.Line;
+import ca.nexapp.math.units.Angle;
+import ca.nexapp.math.units.Point;
 
 public class LineTest {
 

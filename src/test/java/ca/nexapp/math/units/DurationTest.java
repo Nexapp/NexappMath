@@ -1,4 +1,4 @@
-package ca.nexapp.math;
+package ca.nexapp.math.units;
 
 import static com.google.common.truth.Truth.assertThat;
 

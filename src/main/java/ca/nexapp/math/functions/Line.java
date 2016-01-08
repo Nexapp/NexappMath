@@ -2,8 +2,8 @@ package ca.nexapp.math.functions;
 
 import java.util.Objects;
 
-import ca.nexapp.math.Angle;
-import ca.nexapp.math.Point;
+import ca.nexapp.math.units.Angle;
+import ca.nexapp.math.units.Point;
 
 public class Line {
 
