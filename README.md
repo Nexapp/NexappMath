@@ -2,11 +2,15 @@
 Nexapp's math library.
 
 ## Provided by the library
-### Value Objects
+### Units
 **Angle**: degrees or radians, plus some useful methods <br />
 **Duration**: from nanoseconds to centuries, allows conversion <br />
+**Length**: from miles to millimeters, allows conversion <br />
+**Mass**: from tonnes to ounces, allows conversion <br />
 **Percentage**: handle percentage from its two forms: 83% (ratio) or 0.65 (fraction) <br />
-**Point**: cartesian or polar, plus some useful methods
+**Point**: cartesian or polar, plus some useful methods <br />
+**Temperature**: Celsius, Fahrenheit or Kelvin, allows conversion
+
 
 ### Functions
 **Line**:  in a 2D plane (mx + b), with many useful methods
@@ -15,10 +19,8 @@ Nexapp's math library.
 **Rectangle**: easy instantiation. Manages: corners, center point, dimensions and rectangle intersections.
 
 ## Roadmap
-###Value Objects
+### Units
 Volume (litres, millilitres, pint, gallons, tablespoon, teaspoon, etc.) <br />
-Unit of length (km, meters, miles, etc.) <br />
-Mass (grams, kg, pounds, ounces, tonnes, etc.)
 
 ### Shapes
 Triangle <br />
