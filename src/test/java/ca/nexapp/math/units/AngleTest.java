@@ -14,6 +14,26 @@ public class AngleTest {
     private static final double DELTA = 0.01;
 
     @Test
+    public void canAddTwoAngles() {
+        Angle sevenDegrees = Angle.fromDegrees(7);
+        Angle twentyDegrees = Angle.fromDegrees(20);
+
+        Angle result = sevenDegrees.add(twentyDegrees);
+
+        assertThat(result).isEqualTo(Angle.fromDegrees(27));
+    }
+
+    @Test
+    public void canSubtractTwoAngles() {
+        Angle twoRadians = Angle.fromRadians(2);
+        Angle oneRadians = Angle.fromRadians(1);
+
+        Angle result = twoRadians.subtract(oneRadians);
+
+        assertThat(result).isEqualTo(Angle.fromRadians(1));
+    }
+
+    @Test
     public void canConvertAnAngleInDegreesToRadians() {
 	Angle angle = Angle.fromDegrees(AN_ANGLE_IN_DEGREES);
 

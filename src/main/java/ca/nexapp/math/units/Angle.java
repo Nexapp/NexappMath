@@ -16,6 +16,14 @@ public class Angle implements Comparable<Angle> {
 	this.angleInDegrees = angleInDegrees;
     }
 
+    public Angle add(Angle augend) {
+        return new Angle(angleInDegrees + augend.angleInDegrees);
+    }
+
+    public Angle subtract(Angle subtrahend) {
+        return new Angle(angleInDegrees - subtrahend.angleInDegrees);
+    }
+
     public double toDegrees() {
 	return angleInDegrees;
     }
@@ -106,5 +114,4 @@ public class Angle implements Comparable<Angle> {
     public String toString() {
 	return "[Degrees: " + toDegrees() + ", Radians: " + toRadians() + "]";
     }
-
 }
