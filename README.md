@@ -1,4 +1,6 @@
 # Nexapp Math
+[![Build Status](https://travis-ci.org/Nexapp/NexappMath.svg?branch=master)](https://travis-ci.org/Nexapp/NexappMath) 
+<br /> <br />
 Nexapp's math library.
 
 ## Provided by the library
