@@ -3,7 +3,7 @@ package ca.nexapp.math.units;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Percentage {
+public class Percentage implements Comparable<Percentage> {
 
     private static final double ZERO = 0.000000;
     private static final double ONE_HUNDRED = 100.000000;
@@ -47,6 +47,11 @@ public class Percentage {
 
     public static Percentage fromFraction(double numerator, double denominator) {
 	return fromFraction(numerator / denominator);
+    }
+
+    @Override
+    public int compareTo(Percentage other) {
+	return Double.compare(percentageAsFraction, other.percentageAsFraction);
     }
 
     @Override
