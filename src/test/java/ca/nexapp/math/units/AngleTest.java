@@ -288,4 +288,27 @@ public class AngleTest {
 
 	assertThat(angle1.isInFourthQuadrantOrAxes()).isFalse();
     }
+
+    @Test
+    public void aSmallAngle_ShouldBeLesser() {
+	Angle smallAngle = Angle.fromDegrees(17);
+	Angle highAngle = Angle.fromDegrees(276);
+
+	assertThat(smallAngle).isLessThan(highAngle);
+    }
+
+    @Test
+    public void theSameAngle_ShouldBeEqualsComparatively() {
+	Angle angle = Angle.fromDegrees(56);
+
+	assertThat(angle).isEquivalentAccordingToCompareTo(angle);
+    }
+
+    @Test
+    public void aHighAngle_ShouldBeGreater() {
+	Angle smallAngle = Angle.fromDegrees(17);
+	Angle highAngle = Angle.fromDegrees(276);
+
+	assertThat(highAngle).isGreaterThan(smallAngle);
+    }
 }

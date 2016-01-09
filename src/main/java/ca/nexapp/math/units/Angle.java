@@ -2,7 +2,7 @@ package ca.nexapp.math.units;
 
 import java.util.Objects;
 
-public class Angle {
+public class Angle implements Comparable<Angle> {
 
     public static final Angle ZERO_DEGREES = Angle.fromDegrees(0.00);
     public static final Angle DEGREES_90 = Angle.fromDegrees(90.00);
@@ -80,6 +80,11 @@ public class Angle {
 
     public static Angle fromDegrees(double angleInDegrees) {
 	return new Angle(angleInDegrees);
+    }
+
+    @Override
+    public int compareTo(Angle other) {
+	return Double.compare(angleInDegrees, other.angleInDegrees);
     }
 
     @Override
