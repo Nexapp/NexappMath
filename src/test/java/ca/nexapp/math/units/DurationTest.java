@@ -19,10 +19,10 @@ public class DurationTest {
     }
 
     @Test
-    public void substractingTwoDurations_ShouldDecreaseIt() {
+    public void subtractingTwoDurations_ShouldDecreaseIt() {
 	Duration twoSeconds = Duration.seconds(2);
 
-	Duration minuend = twoSeconds.substract(twoSeconds);
+	Duration minuend = twoSeconds.subtract(twoSeconds);
 
 	assertThat(minuend).isEqualTo(Duration.seconds(0));
     }

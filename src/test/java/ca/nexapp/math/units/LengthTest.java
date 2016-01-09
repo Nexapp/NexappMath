@@ -19,11 +19,11 @@ public class LengthTest {
     }
 
     @Test
-    public void canSubstractTwoLengthsTogether() {
+    public void canSubtractTwoLengthsTogether() {
 	Length fiftyCentimeters = Length.fromCentimeters(50);
 	Length thirtyCentimers = Length.fromCentimeters(30);
 
-	Length result = fiftyCentimeters.substract(thirtyCentimers);
+	Length result = fiftyCentimeters.subtract(thirtyCentimers);
 
 	assertThat(result).isEqualTo(Length.fromCentimeters(20));
     }

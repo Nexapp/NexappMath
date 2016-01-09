@@ -19,7 +19,7 @@ public class Mass implements Comparable<Mass> {
 	return new Mass(grams + augend.grams);
     }
 
-    public Mass substract(Mass substrahend) {
+    public Mass subtract(Mass substrahend) {
 	return new Mass(grams - substrahend.grams);
     }
 
