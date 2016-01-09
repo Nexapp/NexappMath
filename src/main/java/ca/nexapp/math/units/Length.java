@@ -19,6 +19,14 @@ public class Length implements Comparable<Length> {
 	this.meters = meters;
     }
 
+    public Length add(Length augend) {
+	return new Length(meters + augend.meters);
+    }
+
+    public Length substract(Length subtrahend) {
+	return new Length(meters - subtrahend.meters);
+    }
+
     public double toMillimeters() {
 	return meters / METERS_IN_A_MILLIMETER;
     }

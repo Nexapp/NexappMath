@@ -9,6 +9,26 @@ public class LengthTest {
     private static final double TOLERANCE = 0.00001;
 
     @Test
+    public void canAddTwoLengthsTogether() {
+	Length oneMeter = Length.fromMeters(1);
+	Length tenMeters = Length.fromMeters(10);
+
+	Length result = oneMeter.add(tenMeters);
+
+	assertThat(result).isEqualTo(Length.fromMeters(11));
+    }
+
+    @Test
+    public void canSubstractTwoLengthsTogether() {
+	Length fiftyCentimeters = Length.fromCentimeters(50);
+	Length thirtyCentimers = Length.fromCentimeters(30);
+
+	Length result = fiftyCentimeters.substract(thirtyCentimers);
+
+	assertThat(result).isEqualTo(Length.fromCentimeters(20));
+    }
+
+    @Test
     public void convertingMetersToMeters_ShouldReturnTheSameValue() {
 	Length length = Length.fromMeters(15);
 
