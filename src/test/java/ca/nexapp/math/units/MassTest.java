@@ -9,6 +9,26 @@ public class MassTest {
     private static final double TOLERANCE = 0.0001;
 
     @Test
+    public void canAddTwoMassesTogether() {
+	Mass oneGram = Mass.grams(1);
+	Mass tenGrams = Mass.grams(10);
+
+	Mass result = oneGram.add(tenGrams);
+
+	assertThat(result).isEqualTo(Mass.grams(11));
+    }
+
+    @Test
+    public void canSubstractTwoMassesTogether() {
+	Mass twoGrams = Mass.grams(2);
+	Mass tenGrams = Mass.grams(10);
+
+	Mass result = tenGrams.substract(twoGrams);
+
+	assertThat(result).isEqualTo(Mass.grams(8));
+    }
+
+    @Test
     public void convertingTonnesToTonnes_ShouldReturnTheSameValue() {
 	Mass mass = Mass.tonnes(5);
 

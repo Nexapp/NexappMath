@@ -15,6 +15,14 @@ public class Mass implements Comparable<Mass> {
 	this.grams = grams;
     }
 
+    public Mass add(Mass augend) {
+	return new Mass(grams + augend.grams);
+    }
+
+    public Mass substract(Mass substrahend) {
+	return new Mass(grams - substrahend.grams);
+    }
+
     public double toOunces() {
 	return grams / GRAMS_IN_AN_OUNCE;
     }
