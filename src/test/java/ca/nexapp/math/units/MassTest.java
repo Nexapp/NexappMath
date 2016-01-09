@@ -19,11 +19,11 @@ public class MassTest {
     }
 
     @Test
-    public void canSubstractTwoMassesTogether() {
+    public void canSubtractTwoMassesTogether() {
 	Mass twoGrams = Mass.grams(2);
 	Mass tenGrams = Mass.grams(10);
 
-	Mass result = tenGrams.substract(twoGrams);
+	Mass result = tenGrams.subtract(twoGrams);
 
 	assertThat(result).isEqualTo(Mass.grams(8));
     }

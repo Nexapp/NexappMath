@@ -23,7 +23,7 @@ public class Length implements Comparable<Length> {
 	return new Length(meters + augend.meters);
     }
 
-    public Length substract(Length subtrahend) {
+    public Length subtract(Length subtrahend) {
 	return new Length(meters - subtrahend.meters);
     }
 

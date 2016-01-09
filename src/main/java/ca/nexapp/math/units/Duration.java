@@ -32,7 +32,7 @@ public class Duration implements Comparable<Duration> {
 	return new Duration(nanoseconds + augend.nanoseconds);
     }
 
-    public Duration substract(Duration subtrahend) {
+    public Duration subtract(Duration subtrahend) {
 	return new Duration(nanoseconds - subtrahend.nanoseconds);
     }
 
