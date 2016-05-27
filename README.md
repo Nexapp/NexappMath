@@ -11,7 +11,8 @@ Nexapp's math library.
 **Mass**: from tonnes to ounces, allows conversion <br />
 **Percentage**: handle percentage from its two forms: 83% (ratio) or 0.65 (fraction) <br />
 **Point**: cartesian or polar, plus some useful methods <br />
-**Temperature**: Celsius, Fahrenheit or Kelvin, allows conversion
+**Temperature**: Celsius, Fahrenheit or Kelvin, allows conversion <br />
+**Coordinates**: Geographical locations, distance between locations, etc.
 
 
 ### Functions
