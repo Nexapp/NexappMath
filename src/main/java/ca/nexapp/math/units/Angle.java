@@ -47,19 +47,9 @@ public class Angle implements Comparable<Angle> {
         return 0 < normalizedAngleInDegrees && normalizedAngleInDegrees < 90;
     }
 
-    public boolean isInFirstQuadrantOrAxes() {
-        double normalizedAngleInDegrees = normalize().toDegrees();
-        return 0 <= normalizedAngleInDegrees && normalizedAngleInDegrees <= 90;
-    }
-
     public boolean isInSecondQuadrant() {
         double normalizedAngleInDegrees = normalize().toDegrees();
         return 90 < normalizedAngleInDegrees && normalizedAngleInDegrees < 180;
-    }
-
-    public boolean isInSecondQuadrantOrAxes() {
-        double normalizedAngleInDegrees = normalize().toDegrees();
-        return 90 <= normalizedAngleInDegrees && normalizedAngleInDegrees <= 180;
     }
 
     public boolean isInThirdQuadrant() {
@@ -67,19 +57,19 @@ public class Angle implements Comparable<Angle> {
         return 180 < normalizedAngleInDegrees && normalizedAngleInDegrees < 270;
     }
 
-    public boolean isInThirdQuadrantOrAxes() {
-        double normalizedAngleInDegrees = normalize().toDegrees();
-        return 180 <= normalizedAngleInDegrees && normalizedAngleInDegrees <= 270;
-    }
-
     public boolean isInFourthQuadrant() {
         double normalizedAngleInDegrees = normalize().toDegrees();
         return 270 < normalizedAngleInDegrees && normalizedAngleInDegrees < 360;
     }
 
-    public boolean isInFourthQuadrantOrAxes() {
-        double normalizedAngleInDegrees = normalize().toDegrees();
-        return 270 <= normalizedAngleInDegrees && normalizedAngleInDegrees <= 360 || normalizedAngleInDegrees == 0.0;
+    public boolean isOnXAxis() {
+        Angle normalized = normalize();
+        return normalized.equals(ZERO_DEGREES) || normalized.equals(DEGREES_180);
+    }
+
+    public boolean isOnYAxis() {
+        Angle normalized = normalize();
+        return normalized.equals(DEGREES_90) || normalized.equals(DEGREES_270);
     }
 
     public static Angle fromRadians(double angleInRadians) {
