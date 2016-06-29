@@ -5,7 +5,7 @@ import java.util.Objects;
 import ca.nexapp.math.units.Angle;
 import ca.nexapp.math.units.Point;
 
-public class Line {
+public class Line implements Solvable {
 
     public static final Line X_AXIS = new Line(0.0, Point.ORIGIN);
     public static final Line Y_AXIS = new Line(Double.POSITIVE_INFINITY, 0.00);
@@ -46,6 +46,14 @@ public class Line {
     private double findIntercept(double slope, Point a) {
         double intercept = a.getY() - slope * a.getX();
         return Double.isNaN(intercept) ? 0.0 : intercept;
+    }
+
+    @Override
+    public double[] findRealRoots() {
+        if (isHorizontal()) {
+            return new double[] {};
+        }
+        return new double[] { findX(0) };
     }
 
     public double getSlope() {
