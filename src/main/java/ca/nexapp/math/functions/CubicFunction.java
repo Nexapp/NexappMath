@@ -6,6 +6,8 @@ import static java.lang.Math.pow;
 import static java.lang.Math.sin;
 import static java.lang.Math.sqrt;
 
+import java.util.Objects;
+
 import org.apache.commons.math3.complex.Complex;
 
 public class CubicFunction implements Solvable {
@@ -82,6 +84,24 @@ public class CubicFunction implements Solvable {
         double x3 = l * (m - n) + p;
 
         return new double[] { x1, x2, x3 };
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(a, b, c, d);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof CubicFunction)) {
+            return false;
+        }
+
+        CubicFunction other = (CubicFunction) obj;
+        return Objects.equals(a, other.a)
+                && Objects.equals(b, other.b)
+                && Objects.equals(c, other.c)
+                && Objects.equals(d, other.d);
     }
 
     @Override

@@ -1,5 +1,7 @@
 package ca.nexapp.math.functions;
 
+import java.util.Objects;
+
 public class QuadraticFunction implements Solvable {
 
     private final double a;
@@ -30,6 +32,23 @@ public class QuadraticFunction implements Solvable {
 
     private double getDiscriminant() {
         return b * b - 4.0 * a * c;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(a, b, c);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof QuadraticFunction)) {
+            return false;
+        }
+
+        QuadraticFunction other = (QuadraticFunction) obj;
+        return Objects.equals(a, other.a)
+                && Objects.equals(b, other.b)
+                && Objects.equals(c, other.c);
     }
 
     @Override
