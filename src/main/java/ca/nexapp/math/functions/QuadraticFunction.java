@@ -16,7 +16,7 @@ public class QuadraticFunction implements Solvable {
     public double[] findRealRoots() {
         double discriminant = getDiscriminant();
 
-        if (!hasRoots()) {
+        if (discriminant < 0) {
             return new double[] {};
         } else if (discriminant == 0) {
             double root = -b / (2.0 * a);
@@ -26,10 +26,6 @@ public class QuadraticFunction implements Solvable {
             double negativeRoot = (-b - Math.sqrt(discriminant)) / (2.0 * a);
             return new double[] { positiveRoot, negativeRoot };
         }
-    }
-
-    private boolean hasRoots() {
-        return getDiscriminant() >= 0;
     }
 
     private double getDiscriminant() {
