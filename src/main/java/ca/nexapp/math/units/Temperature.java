@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Temperature implements Comparable<Temperature> {
 
-    private final double celsius;
+    private double celsius;
 
     private Temperature(double celsius) {
         this.celsius = celsius;

@@ -10,7 +10,7 @@ public class Angle implements Comparable<Angle> {
     public static final Angle DEGREES_270 = Angle.fromDegrees(270.00);
     public static final Angle DEGREES_360 = Angle.fromDegrees(360.00);
 
-    private final double angleInDegrees;
+    private double angleInDegrees;
 
     private Angle(double angleInDegrees) {
         this.angleInDegrees = angleInDegrees;

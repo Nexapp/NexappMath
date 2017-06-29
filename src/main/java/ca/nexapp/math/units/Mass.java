@@ -9,7 +9,7 @@ public class Mass implements Comparable<Mass> {
     private static final double GRAMS_IN_A_KILOGRAM = 1000;
     private static final double GRAMS_IN_A_TONNE = GRAMS_IN_A_KILOGRAM * 1000;
 
-    private final double grams;
+    private double grams;
 
     private Mass(double grams) {
         this.grams = grams;

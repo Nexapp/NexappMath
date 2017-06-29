@@ -22,7 +22,7 @@ public class Duration implements Comparable<Duration> {
     private static final double NANOS_IN_A_DECADE = 10.0 * NANOS_IN_A_YEAR;
     private static final double NANOS_IN_A_CENTURY = 10.0 * NANOS_IN_A_DECADE;
 
-    private final double nanoseconds;
+    private double nanoseconds;
 
     private Duration(double nanoseconds) {
         this.nanoseconds = nanoseconds;
@@ -157,5 +157,10 @@ public class Duration implements Comparable<Duration> {
 
         Duration other = (Duration) obj;
         return Objects.equals(nanoseconds, other.nanoseconds);
+    }
+
+    @Override
+    public String toString() {
+        return nanoseconds + "nanos";
     }
 }

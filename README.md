@@ -54,10 +54,6 @@ In your `pom.xml`, you must add the GitHub repository as follows:
 	<repository>
 		<id>nexapp-math-mvn-repo</id>
 		<url>https://raw.github.com/nexapp/nexappmath/mvn-repo/</url>
-		<snapshots>
-			<enabled>true</enabled>
-			<updatePolicy>always</updatePolicy>
-		</snapshots>
 	</repository>
 </repositories>
 ```
@@ -67,6 +63,6 @@ Then, you simply add the dependency as follows:
 <dependency>
 	<groupId>ca.nexapp</groupId>
 	<artifactId>math</artifactId>
-	<version>0.0.4</version>
+	<version>0.0.5</version>
 </dependency>
 ```

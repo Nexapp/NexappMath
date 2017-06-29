@@ -13,7 +13,7 @@ public class Length implements Comparable<Length> {
     private static final double METERS_IN_A_FOOT = 0.3048;
     private static final double METERS_IN_AN_INCH = 0.0254;
 
-    private final double meters;
+    private double meters;
 
     private Length(double meters) {
         this.meters = meters;
