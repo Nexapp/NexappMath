@@ -8,8 +8,8 @@ public class Point {
 
     private static final double PRECISION = 0.001;
 
-    private final double x;
-    private final double y;
+    private double x;
+    private double y;
 
     private Point(double x, double y) {
         this.x = x;

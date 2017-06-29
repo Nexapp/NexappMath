@@ -11,7 +11,7 @@ public class Percentage implements Comparable<Percentage> {
     public static final Percentage ZERO_PERCENT = Percentage.fromRatio(ZERO);
     public static final Percentage ONE_HUNDRED_PERCENT = Percentage.fromRatio(ONE_HUNDRED);
 
-    private final double percentageAsFraction;
+    private double percentageAsFraction;
 
     private Percentage(double percentageAsFraction) {
         this.percentageAsFraction = percentageAsFraction;

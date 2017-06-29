@@ -10,8 +10,8 @@ public class Coordinates {
 
     private static final Length MEAN_EARTH_RADIUS = Length.fromKilometers(6_371);
 
-    private final Angle latitude;
-    private final Angle longitude;
+    private Angle latitude;
+    private Angle longitude;
 
     private Coordinates(Angle latitude, Angle longitude) {
         this.latitude = latitude;

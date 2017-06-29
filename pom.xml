@@ -4,7 +4,7 @@
 
 	<groupId>ca.nexapp</groupId>
 	<artifactId>math</artifactId>
-	<version>0.0.4</version>
+	<version>0.0.5</version>
 	<packaging>jar</packaging>
 
 	<name>NexappMath</name>
@@ -90,7 +90,7 @@
 		<dependency>
 			<groupId>com.google.truth</groupId>
 			<artifactId>truth</artifactId>
-			<version>0.28</version>
+			<version>0.32</version>
 			<scope>test</scope>
 		</dependency>
 
