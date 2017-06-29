@@ -30,6 +30,20 @@ public class QuadraticFunction implements Solvable {
         }
     }
 
+    public boolean hasRoots() {
+        return getDiscriminant() >= 0;
+    }
+
+    public double findRightRoot() {
+        double[] roots = findRealRoots();
+        return roots.length == 1 ? roots[0] : Math.max(roots[0], roots[1]);
+    }
+
+    public double findLeftRoot() {
+        double[] roots = findRealRoots();
+        return roots.length == 1 ? roots[0] : Math.min(roots[0], roots[1]);
+    }
+
     private double getDiscriminant() {
         return b * b - 4.0 * a * c;
     }
