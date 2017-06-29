@@ -3,7 +3,7 @@
 <br /> <br />
 Nexapp's math library.
 
-## Provided by the library
+# Provided by the library
 ### Units
 **Angle**: degrees or radians, plus some useful methods <br />
 **Duration**: from nanoseconds to centuries, allows conversion <br />
@@ -16,12 +16,15 @@ Nexapp's math library.
 
 
 ### Functions
-**Line**:  in a 2D plane (mx + b), with many useful methods
+**Line**: in a 2D plane (mx + b), with many useful methods <br />
+**Quadratic**: 2nd degree function <br />
+**Cubic**: 3rd degree function <br />
+**Quartic**: 4th degree function
 
 ### Shapes
 **Rectangle**: easy instantiation. Manages: corners, center point, dimensions and rectangle intersections.
 
-## Roadmap
+# Roadmap
 ### Units
 Volume (litres, millilitres, pint, gallons, tablespoon, teaspoon, etc.) <br />
 
@@ -32,9 +35,6 @@ Ellipse
 
 ### Functions
 Segment <br />
-Quadratic function (2nd degree) <br />
-Cubic function (3rd degree) <br />
-Quartic function (4th degree)
 
 ### Bezier curves
 Quadratic bezier curve (2nd degree) <br />
@@ -45,7 +45,7 @@ Spline
 Between shapes <br />
 Between functions
 
-## How to use it
+# How to use it
 At the moment, this project is hosted on GitHub and not on Maven Central.
 
 In your `pom.xml`, you must add the GitHub repository as follows:
@@ -63,6 +63,6 @@ Then, you simply add the dependency as follows:
 <dependency>
 	<groupId>ca.nexapp</groupId>
 	<artifactId>math</artifactId>
-	<version>0.0.5</version>
+	<version>0.0.6</version>
 </dependency>
 ```

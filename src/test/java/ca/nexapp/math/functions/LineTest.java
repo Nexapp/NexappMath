@@ -4,7 +4,6 @@ import static com.google.common.truth.Truth.assertThat;
 
 import org.junit.Test;
 
-import ca.nexapp.math.functions.Line;
 import ca.nexapp.math.units.Angle;
 import ca.nexapp.math.units.Point;
 
@@ -50,6 +49,32 @@ public class LineTest {
 
         assertThat(line.getSlope()).isWithin(TOLERANCE).of(1);
         assertThat(line.getIntercept()).isWithin(TOLERANCE).of(5);
+    }
+
+    @Test
+    public void givenAParallelLineOfTheXAxis_ShouldFindNoRealRoot() {
+        Line parallelLine = Line.X_AXIS.findParallelLinePassingThrough(Point.fromCartesian(50, 50));
+
+        double[] roots = parallelLine.findRealRoots();
+
+        assertThat(roots).isEmpty();
+    }
+
+    @Test
+    public void givenTheXAxis_ShouldFindNoRealRoot() {
+        double[] roots = Line.X_AXIS.findRealRoots();
+
+        assertThat(roots).isEmpty();
+    }
+
+    @Test
+    public void givenASlope_ShouldFindTheSingleRealRoot() {
+        Line line = new Line(1, 0);
+
+        double[] roots = line.findRealRoots();
+
+        double[] expected = { 0 };
+        assertThat(roots).hasValuesWithin(TOLERANCE).of(expected);
     }
 
     @Test
