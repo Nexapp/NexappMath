@@ -13,7 +13,7 @@ Nexapp's math library.
 **Point**: cartesian or polar, plus some useful methods <br />
 **Temperature**: Celsius, Fahrenheit or Kelvin, allows conversion <br />
 **Coordinates**: Geographical locations, distance between locations, etc.
-
+**DigialStorage**: from bits to petabytes
 
 ### Functions
 **Line**: in a 2D plane (mx + b), with many useful methods <br />
@@ -63,6 +63,6 @@ Then, you simply add the dependency as follows:
 <dependency>
 	<groupId>ca.nexapp</groupId>
 	<artifactId>math</artifactId>
-	<version>0.0.6</version>
+	<version>0.0.7</version>
 </dependency>
 ```
