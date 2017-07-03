@@ -60,6 +60,26 @@ public class DigitalStorageTest {
     }
 
     @Test
+    public void canAddTwoDigitalStorages() {
+        DigitalStorage left = DigitalStorage.megabytes(2);
+        DigitalStorage right = DigitalStorage.kilobytes(1055);
+
+        DigitalStorage add = left.add(right);
+
+        assertThat(add.toKilobytes()).isEqualTo(1055 + 2048);
+    }
+
+    @Test
+    public void canSubtractTwoDigitalStorages() {
+        DigitalStorage left = DigitalStorage.gigabytes(3);
+        DigitalStorage right = DigitalStorage.megabytes(255);
+
+        DigitalStorage subtract = left.subtract(right);
+
+        assertThat(subtract.toMegabytes()).isEqualTo(1024 * 3 - 255);
+    }
+
+    @Test
     public void canCompareDigitalStorages() {
         DigitalStorage small = DigitalStorage.kilobytes(755);
         DigitalStorage medium = DigitalStorage.megabytes(12);

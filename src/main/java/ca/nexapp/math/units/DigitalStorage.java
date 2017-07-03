@@ -17,6 +17,14 @@ public class DigitalStorage implements Comparable<DigitalStorage> {
         this.bits = bits;
     }
 
+    public DigitalStorage add(DigitalStorage augend) {
+        return new DigitalStorage(bits + augend.bits);
+    }
+
+    public DigitalStorage subtract(DigitalStorage subtrahend) {
+        return new DigitalStorage(bits - subtrahend.bits);
+    }
+
     public long toBits() {
         return bits;
     }
