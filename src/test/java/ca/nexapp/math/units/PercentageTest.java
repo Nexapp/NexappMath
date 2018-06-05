@@ -44,6 +44,25 @@ public class PercentageTest {
     }
 
     @Test
+    public void canCreateByAveragingPercentages() {
+        Percentage ten = Percentage.fromRatio(10);
+        Percentage twenty = Percentage.fromRatio(20);
+        Percentage thirty = Percentage.fromRatio(30);
+        Percentage fourty = Percentage.fromRatio(40);
+        Percentage fifty = Percentage.fromRatio(50);
+
+        Percentage average = Percentage.averaging(ten, twenty, thirty, fourty, fifty);
+
+        Percentage expected = Percentage.fromRatio(30); // 150 % 5
+        assertThat(average).isEqualTo(expected);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void givenNoPercentage_WhenAveraging_ShouldThrowAnException() {
+        Percentage.averaging();
+    }
+
+    @Test
     public void canCalculateTheAverageBetweenTwoValues() {
         Percentage average = Percentage.ZERO_PERCENT.average(Percentage.ONE_HUNDRED_PERCENT);
 
