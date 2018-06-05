@@ -49,6 +49,14 @@ public class Percentage implements Comparable<Percentage> {
         return fromFraction(numerator / denominator);
     }
 
+    public static Percentage averaging(Percentage... percentages) {
+        if (percentages.length == 0) {
+            throw new IllegalArgumentException("Must have at least one percentage to calculate an average");
+        }
+        double sum = Arrays.stream(percentages).mapToDouble(Percentage::toRatio).sum();
+        return fromFraction(sum, ONE_HUNDRED * percentages.length);
+    }
+
     @Override
     public int compareTo(Percentage other) {
         return Double.compare(percentageAsFraction, other.percentageAsFraction);
