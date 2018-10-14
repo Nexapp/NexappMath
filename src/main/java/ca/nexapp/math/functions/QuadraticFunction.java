@@ -26,6 +26,10 @@ public class QuadraticFunction {
         return Point.fromCartesian(x, y);
     }
 
+    public boolean hasRoots() {
+        return getDiscriminant() >= 0;
+    }
+
     public double[] findRealRoots() {
         double discriminant = getDiscriminant();
 
