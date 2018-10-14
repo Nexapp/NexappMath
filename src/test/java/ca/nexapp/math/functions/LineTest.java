@@ -707,4 +707,30 @@ public class LineTest {
         assertThat(line.isPointBelow(aPointOnTheLine)).isTrue();
     }
 
+    @Test
+    public void givenDifferentSlopes_CanFindTheIntersectingPoint() {
+        // https://www.wolframalpha.com/input/?i=y+%3D+1.0x+%2B+5.0+and+y+%3D+-1.0x+%2B+0.0
+        Line line = new Line(A_SLOPE, AN_INTERCEPT);
+        Line perpendicularLine = line.findPerpendicularLinePassingThrough(Point.ORIGIN);
+
+        Point actualIntersectingPoint = line.findIntersectionWith(perpendicularLine);
+
+        Point expected = Point.fromCartesian(-2.5, 2.5);
+        assertThat(actualIntersectingPoint).isEqualTo(expected);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void givenAParallelLine_WhenFindingIntersectingPoint_ShouldThrowAnException() {
+        Line line = new Line(A_SLOPE, AN_INTERCEPT);
+        Line parallelLine = new Line(A_SLOPE, AN_INTERCEPT + 5);
+
+        line.findIntersectionWith(parallelLine);
+    }
+
+    @Test
+    public void givenAVerticalLine_WhenFindingIntersectingPoint_ShouldReturnTheCorrespondingPoint() {
+        Point point = Line.X_AXIS.findIntersectionWith(Line.Y_AXIS);
+
+        assertThat(point).isEqualTo(Point.ORIGIN);
+    }
 }

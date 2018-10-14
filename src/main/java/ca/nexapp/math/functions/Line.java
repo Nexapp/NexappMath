@@ -216,6 +216,36 @@ public class Line {
         return findTheAboveParallelLineOf(-offset);
     }
 
+    public boolean isIntersecting(Line other) {
+        return !isParallel(other);
+    }
+
+    public Point findIntersectionWith(Line otherLine) {
+        if (!isIntersecting(otherLine)) {
+            throw new IllegalArgumentException(this + " is not intersecting with " + otherLine);
+        }
+
+        if (isVertical() || otherLine.isVertical()) {
+            return findIntersectionWithVerticalLine(otherLine);
+        }
+
+        double x = (otherLine.getIntercept() - getIntercept()) / (getSlope() - otherLine.getSlope());
+        double y = findY(x);
+
+        return Point.fromCartesian(x, y);
+    }
+
+    private Point findIntersectionWithVerticalLine(Line other) {
+        // Solution found at: http://www.mathopenref.com/coordintersection.html
+        Line verticalLine = isVertical() ? this : other;
+        Line otherLine = !isVertical() ? this : other;
+
+        double x = verticalLine.getIntercept();
+        double y = otherLine.findY(x);
+
+        return Point.fromCartesian(x, y);
+    }
+
     private boolean hasSameSlope(Line other) {
         double slopeDiff = Math.abs(slope - other.slope);
         return Double.isInfinite(slopeDiff) || slopeDiff < PRECISION;
@@ -238,6 +268,6 @@ public class Line {
 
     @Override
     public String toString() {
-        return slope + "x + " + intercept;
+        return "y = " + slope + "x + " + intercept;
     }
 }
