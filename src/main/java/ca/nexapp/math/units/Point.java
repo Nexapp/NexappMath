@@ -96,6 +96,12 @@ public class Point {
         return new Point(x, y);
     }
 
+    public static Point centerPointBetween(Point a, Point b) {
+        double xHalfDistance = (b.getX() - a.getX()) / 2.0;
+        double yHalfDistance = (b.getY() - a.getY()) / 2.0;
+        return Point.fromCartesian(a.getX() + xHalfDistance, a.getY() + yHalfDistance);
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(x, y);

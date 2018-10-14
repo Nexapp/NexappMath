@@ -18,23 +18,29 @@ public class PointTest {
     private static final double TOLERANCE = 0.0001;
 
     @Test
-    public void givenX_ShouldRetrieveTheSameX() {
-        assertThat(Point.fromCartesian(X, Y).getX()).isWithin(TOLERANCE).of(X);
+    public void canCreateACartesianPoint() {
+        Point cartesian = Point.fromCartesian(X, Y);
+
+        assertThat(cartesian.getX()).isWithin(TOLERANCE).of(X);
+        assertThat(cartesian.getY()).isWithin(TOLERANCE).of(Y);
     }
 
     @Test
-    public void givenY_ShouldRetrieveTheSameY() {
-        assertThat(Point.fromCartesian(X, Y).getY()).isWithin(TOLERANCE).of(Y);
+    public void canCreateAPolarPoint() {
+        Point polar = Point.fromPolar(ANGLE, DISTANCE);
+
+        assertThat(polar.getPolarDistance()).isWithin(TOLERANCE).of(DISTANCE);
+        assertThat(polar.getPolarAngle()).isEqualTo(ANGLE);
     }
 
     @Test
-    public void givenAPolarDistance_ShouldRetrieveTheSamePolarDistance() {
-        assertThat(Point.fromPolar(ANGLE, DISTANCE).getPolarDistance()).isWithin(TOLERANCE).of(DISTANCE);
-    }
+    public void canCreateACenterPointBetweenTwoPoints() {
+        Point a = Point.fromCartesian(10, 10);
+        Point b = Point.fromCartesian(100, 100);
+        Point center = Point.centerPointBetween(a, b);
 
-    @Test
-    public void givenAPolarAngle_ShouldRetrieveTheSamePolarAngle() {
-        assertThat(Point.fromPolar(ANGLE, DISTANCE).getPolarAngle()).isEqualTo(ANGLE);
+        assertThat(center.getX()).isWithin(TOLERANCE).of(55);
+        assertThat(center.getY()).isWithin(TOLERANCE).of(55);
     }
 
     @Test
