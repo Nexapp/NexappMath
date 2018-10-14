@@ -10,7 +10,7 @@ import java.util.Objects;
 
 import org.apache.commons.math3.complex.Complex;
 
-public class CubicFunction implements Solvable {
+public class CubicFunction {
 
     private final double a;
     private final double b;
@@ -24,7 +24,6 @@ public class CubicFunction implements Solvable {
         this.d = d;
     }
 
-    @Override
     public double[] findRealRoots() {
         // Solution found at: http://www.1728.org/cubic2.htm
         double f = (3.0 * c / a - pow(b, 2.0) / pow(a, 2.0)) / 3.0;

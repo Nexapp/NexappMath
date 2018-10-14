@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-public class QuarticFunction implements Solvable {
+public class QuarticFunction {
 
     private static final double NEAR_ZERO = 0.0000001;
 
@@ -27,7 +27,6 @@ public class QuarticFunction implements Solvable {
         this.e = e;
     }
 
-    @Override
     public double[] findRealRoots() {
         if (abs(a) < NEAR_ZERO) {
             return new CubicFunction(b, c, d, e).findRealRoots();
