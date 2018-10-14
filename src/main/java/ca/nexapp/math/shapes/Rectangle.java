@@ -45,26 +45,26 @@ public class Rectangle {
     }
 
     public boolean isIntersecting(Rectangle other) {
-        boolean left = isOverlapingToLeft(other);
-        boolean right = isOverlapingToRight(other);
-        boolean top = isOverlapingToTop(other);
-        boolean bottom = isOverlapingToBottom(other);
+        boolean left = isOverlappingToLeft(other);
+        boolean right = isOverlappingToRight(other);
+        boolean top = isOverlappingToTop(other);
+        boolean bottom = isOverlappingToBottom(other);
         return !(left || right || top || bottom);
     }
 
-    private boolean isOverlapingToLeft(Rectangle other) {
+    private boolean isOverlappingToLeft(Rectangle other) {
         return other.getX2() < getX1();
     }
 
-    private boolean isOverlapingToRight(Rectangle other) {
+    private boolean isOverlappingToRight(Rectangle other) {
         return other.getX1() > getX2();
     }
 
-    private boolean isOverlapingToTop(Rectangle other) {
+    private boolean isOverlappingToTop(Rectangle other) {
         return other.getY2() > getY1();
     }
 
-    private boolean isOverlapingToBottom(Rectangle other) {
+    private boolean isOverlappingToBottom(Rectangle other) {
         return other.getY1() < getY2();
     }
 
